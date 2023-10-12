@@ -10,13 +10,11 @@ public class Fraction {
 	}
 	
 	//TODO default constructor (no arguments)
-    public fraction(){
+    public Fraction(){
         numerator = 2;
         denominator = 5;
-    }
-    
 
-	
+    }
 	public int getNum()
 	{
 		return numerator;
@@ -35,17 +33,17 @@ public class Fraction {
     }
 	
 	// TODO  subtract()
-    public fraction subtract(fraction other){
-        int n = this.numerator*other.denominator - this.numerator*other.denominator;
+    public Fraction subtract(Fraction other){
+        int n = this.numerator*other.denominator - other.numerator*this.denominator;
         int d = this.denominator * other.getDenom();
-        fraction result = new Fraction(n, d);
+        Fraction result = new Fraction(n, d);
         return result;
 
 
     }
 	
 	// TODO multiply()
-	public fraction multiple(fraction other){
+	public Fraction multiple(Fraction other){
         int n = this.numerator*other.denominator * this.numerator*other.denominator;
         int d = this.denominator * other.getDenom();
         Fraction result = new Fraction(n, d);
@@ -54,10 +52,11 @@ public class Fraction {
 
 	// TODO toString()
 	   public String toString(){
-        string s = numerator + "/" + denominator;
+        String s = numerator + "/" + denominator;
+		return s;
     }
 	// TODO reciprocal()
-	public fraction reciprocal(){
+	public Fraction reciprocal(){
         int denominator = numerator;
         int numerator = denominator;
         Fraction result = new Fraction(numerator, denominator);
