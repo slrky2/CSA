@@ -57,14 +57,15 @@ public class Fraction {
     }
 	// TODO reciprocal()
 	public Fraction reciprocal(){
-        int denominator = numerator;
-        int numerator = denominator;
-        Fraction result = new Fraction(numerator, denominator);
-        return result;
+       if (numerator==0){
+		return new Fraction();
+	   } else{
+		return new Fraction();
+
+	   }}
 
 
 
-    }
 	
 	public static void main(String[] args) {
 		Fraction f1 = new Fraction(3,4);	// create an instance of fraction
