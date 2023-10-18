@@ -86,15 +86,15 @@ int count3 = 0;
       g.setColor(Color.RED);
       degrees = countToDegrees(count1, total);
       drawSector(g, x, y, r, fromDegree, degrees);
+      fromDegree = fromDegree + degrees;
 
-      int degrees2;
       g.setColor(Color.blue);
-      degrees = countToDegrees(count1, total);
+      degrees = countToDegrees(count2, total);
       drawSector(g, x, y, r, fromDegree, degrees);
+      fromDegree = fromDegree + degrees;
 
-      int degrees3;
       g.setColor(Color.green);
-      degrees = countToDegrees(count1, total);
+    degrees = Math.max(360 - fromDegree, 0);
       drawSector(g, x, y, r, fromDegree, degrees);
       
 
@@ -114,11 +114,11 @@ int count3 = 0;
     y += (r + 20);
     g.setColor(Color.BLACK);
 
-    //g.drawString( _______________ , x - r, y);
+    g.drawString(Jayam + ":" + count1, x - r, y);
 
-    //g.drawString( _______________ , x, y);
+    g.drawString(Om + ":"+ count2, x, y);
 
-    //g.drawString( _______________ , x + r, y);
+    g.drawString(Pat + ":" + count3, x + r, y);
 
 
     // Display the color squares:
@@ -136,9 +136,7 @@ int count3 = 0;
   // corresponds to count / total, rounded to the nearest integer.
   private int countToDegrees(int count, int total)
   {
-  //____________________________________________________
-
-    return 0;
+  return (int) ((double) count/total * 360 );
   }
 
 
@@ -158,7 +156,7 @@ int count3 = 0;
 		new PollDisplayPanel("Jayam","Om","Pat");
 	votingMachine.vote1();
 	votingMachine.vote2();
-	votingMachine.vote2();
+	votingMachine.vote3();
 	System.out.println(votingMachine);
   }
 }
